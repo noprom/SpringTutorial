@@ -24,7 +24,7 @@ public class HelloController {
 		return "name";
 	}
 
-	@RequestMapping(value = "result", method = RequestMethod.GET)
+	@RequestMapping(value = "result", method = RequestMethod.POST)
 	public String result(ModelMap model,@RequestParam String name, @RequestParam int age) {
 		model.addAttribute("name", name);
 		model.addAttribute("age", age);
@@ -33,6 +33,11 @@ public class HelloController {
 
 	@RequestMapping(value = "adduser", method = RequestMethod.GET)
 	public String addUser(ModelMap model) {
+		User u = new User();
+		u.setName("xiaoming");
+		u.setAge(20);
+		model.addAttribute("user", u);
+
 		return "adduser";
 	}
 }

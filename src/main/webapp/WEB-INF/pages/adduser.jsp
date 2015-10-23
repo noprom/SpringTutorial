@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -23,11 +24,17 @@
 <body>
 <h2>新增用户</h2>
 
-<form action="result" method="get" role="form">
-    <input type="text" name="name"/>
-    <input type="text" name="age"/>
+<%--<form action="result" method="post" role="form">--%>
+    <%--<input type="text" name="name"/>--%>
+    <%--<input type="text" name="age"/>--%>
+    <%--<button type="submit">提交</button>--%>
+<%--</form>--%>
+
+<form:form action="result" method="post" modelAttribute="user">
+    名字:<form:input path="name"/> <br/>
+    年龄:<form:input path="age"/> <br/>
     <button type="submit">提交</button>
-</form>
+</form:form>
 
 <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
 <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
